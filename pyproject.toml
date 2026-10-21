@@ -1,0 +1,43 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "consulta-br"
+version = "0.1.0"
+description = "Consulte CEP, CNPJ e feriados nacionais no terminal, via BrasilAPI"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Pablo Vinicius" }]
+keywords = ["brasilapi", "cli", "cep", "cnpj", "feriados", "brasil", "consulta-br"]
+classifiers = [
+    "Environment :: Console",
+    "Programming Language :: Python :: 3.12",
+    "Typing :: Typed",
+]
+dependencies = [
+    "typer>=0.15",
+    "httpx>=0.27",
+]
+
+[project.scripts]
+consulta-br = "consulta_br.cli:app"
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "respx>=0.21",
+    "ruff>=0.8",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/consulta_br"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
