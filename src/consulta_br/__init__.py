@@ -3,6 +3,6 @@
 from importlib.metadata import PackageNotFoundError, version
 
 try:
-    __version__ = version("brasilapi-cli")
+    __version__ = version("consulta-br")
 except PackageNotFoundError:  # rodando direto do source, sem instalar
     __version__ = "0.0.0"

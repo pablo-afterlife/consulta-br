@@ -3,7 +3,7 @@ from typing import Annotated
 
 import typer
 
-from brasilapi_cli import __version__, api
+from consulta_br import __version__, api
 
 app = typer.Typer(
     help="Consulta CEP, CNPJ e feriados na BrasilAPI.",
@@ -19,7 +19,7 @@ def main(
     ),
 ) -> None:
     if version:
-        typer.echo(f"brasilapi-cli {__version__}")
+        typer.echo(f"consulta-br {__version__}")
         raise typer.Exit()
 
 

@@ -3,15 +3,15 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "brasilapi-cli"
+name = "consulta-br"
 version = "0.1.0"
-description = "CLI para consultar CEP, CNPJ e feriados na BrasilAPI"
+description = "Consulte CEP, CNPJ e feriados nacionais no terminal, via BrasilAPI"
 readme = "README.md"
 requires-python = ">=3.12"
 license = "MIT"
 license-files = ["LICENSE"]
 authors = [{ name = "Pablo Vinicius" }]
-keywords = ["brasilapi", "cli", "cep", "cnpj", "brasil"]
+keywords = ["brasilapi", "cli", "cep", "cnpj", "feriados", "brasil", "consulta-br"]
 classifiers = [
     "Environment :: Console",
     "Programming Language :: Python :: 3.12",
@@ -23,7 +23,7 @@ dependencies = [
 ]
 
 [project.scripts]
-brasilapi = "brasilapi_cli.cli:app"
+consulta-br = "consulta_br.cli:app"
 
 [dependency-groups]
 dev = [
@@ -33,7 +33,7 @@ dev = [
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/brasilapi_cli"]
+packages = ["src/consulta_br"]
 
 [tool.ruff]
 line-length = 100
